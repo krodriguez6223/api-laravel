@@ -24,5 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 /**Listado de API* */
-Route::get('/personas', [ApiController::class, 'persona'])->name('personas.show');
+//ruta para mostrar todos los registros de la tabla persona.. eje: api/personas
+Route::get('/personas', [ApiController::class, 'personas'])->name('personas.show');
+//ruta para mostrar los registros de un persona en específico.. eje: api/personas/1
+Route::get('/personas/{persona}', [ApiController::class, 'persona'])->name('persona.show');
 
