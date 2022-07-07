@@ -18,7 +18,7 @@ class PersonaSeed extends Seeder
     $faker = Faker::create();
     
     for($i=0; $i < 20; $i++){
-        \DB::table("persona")->insert(
+        \DB::table("personas")->insert(
             array(
                 'nombre' => $faker->firstName("male"),
                 'apellido' => $faker->lastName,

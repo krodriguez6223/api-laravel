@@ -18,7 +18,7 @@ class ProductoSeed extends Seeder
         $faker = Faker::create();
     
     for($i=0; $i < 20; $i++){
-        \DB::table("producto")->insert(
+        \DB::table("productos")->insert(
             array(
                 'nombre' => $faker->name,
                 'cantidad' => $faker->randomDigit,
