@@ -15,17 +15,23 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/**Listado de API* */
-//ruta para mostrar todos los registros de la tabla persona.. eje: api/personas
+                /**Listado de API* */
+
+// registros de la tabla persona.. eje: api/personas
 Route::get('/personas', [ApiController::class, 'personas'])->name('personas.show');
-//ruta para mostrar los registros de un persona en específico.. eje: api/personas/1
+
+// registros de un persona en específico.. eje: api/personas/1
 Route::get('/personas/{persona}', [ApiController::class, 'persona'])->name('persona.show');
+
+// registros de la tabla producto.. eje: api/productos
+Route::get('/productos', [ApiController::class, 'productos'])->name('productos.show');
+
+// registros de un producto en específico.. eje: api/productos/1
+Route::get('/productos/{producto}', [ApiController::class, 'producto'])->name('producto.show');
 
